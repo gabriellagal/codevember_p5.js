@@ -1,0 +1,29 @@
+let dim;
+
+function setup() {
+  createCanvas(300, 500);
+  dim = width / 2;
+  background(208, 206, 85);
+  colorMode(RGB, 221);
+  noStroke();
+  ellipseMode(RADIUS);
+  loop()
+}
+
+let angle = 0;
+
+function draw() {
+   let radius = dim / 5;
+  let h = (0, 179, 104);
+  for (let r = radius; r > 0; --r) {
+    fill(h, 230, 185);
+    translate(width / 2, height / 2);
+    rotate(angle);
+    strokeWeight(1);
+    stroke(1);
+    ellipseMode(RADIUS);
+    ellipse(100, 100, r / 3, r);    
+    angle += 0.1;
+    h = (h + 8) % 180;
+  }
+}
